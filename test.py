@@ -36,5 +36,5 @@ fig = go.Figure(data=[go.Table(
                align='left'))
 ])
 
-fig.update_layout(width=500, height=1000)
+fig.update_layout(width=500, height=500)
 fig.write_image("plot.png")

@@ -5,6 +5,18 @@
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
+        <style>
+            body {
+                /*
+                background-image: url('/static/stonkman.jpg');
+                background-repeat: no-repeat;
+                background-position: center right;
+                background-attachment: fixed;
+                background-size: cover;
+                */
+                background-color: rgb(97, 51, 124);
+            }
+        </style>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
@@ -16,9 +28,46 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Hello World!</h1>
-        <img src="/static/stonk_graph.png">
-        <p>{{content}}</p>
+        <h1 style= padding-left:180px>Stonk Challenge Test</h1>
         <script src="" async defer></script>
+        <style>
+            table, th, td {
+              border: 1px solid rgb(0, 0, 0);
+              border-spacing: 0px;
+              width:auto;
+              margin-left: 60px;
+            }
+            tr:nth-child(odd) {background-color: #c5c6ce;}
+            tr:nth-child(even) {background-color: #ffffff;}
+            tr:nth-child(1) {background-color: #3473e9;}
+            tr:nth-child(1) {color:  #ffffff;}
+            
+            th, td {
+              padding: 10px;
+            }
+            </style>
+            </head>
+            <body>
+            
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Ticker</th>
+                <th>Current Price</th>
+                <th>Starting Price</th>
+                <th>Percent Change</th>
+              </tr>
+
+              {%for i in range(0, 7)%}
+                <tr>
+                    <td>{{content.names[i]}}</td>
+                    <td>${{content.ticker[i]}}</td>
+                    <td>${{content.currentPrice[i]}}</td>
+                    <td>${{content.startPrice[i]}}</td>
+                    <td>{{content.percentReturn[i]}}%</td>
+                </tr>
+              {%endfor%}
+            </table>
+            <img src="/static/stonk_graph.png">
     </body>
 </html>
