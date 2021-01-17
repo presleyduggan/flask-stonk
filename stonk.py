@@ -1,4 +1,9 @@
 from flask import Flask, render_template
+import matplotlib
+matplotlib.use('Agg')
+from matplotlib import rcParams
+rcParams['font.family'] = 'sans-serif'
+rcParams['font.sans-serif'] = ['Tahoma']
 import matplotlib.pyplot as plt
 from yahoo_fin import stock_info as si
 from decimal import Decimal
@@ -47,12 +52,12 @@ def printrand():
         plt.bar(names[i], percentReturn[i][positive[i]], color = 'forestgreen', edgecolor = 'blue', linewidth = 1.5)
         plt.bar(names[i], percentReturn[i][negative[i]], color = 'red', edgecolor = 'blue', linewidth = 1.5)
     
-    plt.ylabel('% Returnz', fontsize = 14)
+    plt.ylabel('% Returnz', fontsize = 16, fontweight='bold')
     plt.rc('axes', axisbelow=True)
     #plt.grid(False, color = 'gray', linestyle = 'dashed')
-    plt.xlabel('Stonker', fontsize = 14)
-    plt.title('Current Returns: Stonks Competition')
-    plt.savefig('static/stonk_graph.png', facecolor='purple', edgecolor='none')
+    plt.xlabel('Stonker', fontsize = 16, fontweight='bold')
+    plt.title('Current Returns: Stonks Competition', fontweight='bold', fontsize = 20)
+    plt.savefig('static/stonk_graph.png', facecolor='blanchedalmond', edgecolor='none')
     return render_template('web.html', content= myDict)
 
 # No caching at all for API endpoints.
@@ -66,5 +71,5 @@ def add_header(response):
 	
 
 if __name__ == '__main__':
-	#app.run(host='127.0.0.1', port=8080, debug=True)
-    app.run(host='192.168.0.2', debug= True)
+	app.run(host='127.0.0.1', port=8080, debug=True)
+    #app.run(host='127.0.0.1', debug= True)
