@@ -28,6 +28,8 @@ def printrand():
     myDict["percentReturn"] = percentReturn
     myDict["max"] = max_index
 
+    #test
+
     graph = plt.bar(names, percentReturn)
     plt.ylabel('% Return', fontsize = 14)
     plt.xlabel('Stonker', fontsize = 14)
