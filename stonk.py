@@ -25,6 +25,7 @@ def printrand():
         percentReturn.append(round((((currentPrice[i]-startPrice[i])/startPrice[i])*100),2))
 
     max_index = percentReturn.index(max(percentReturn))
+    print(max_index)
 
     #save values into dictionary for easy access in html
     myDict = {}
@@ -35,7 +36,6 @@ def printrand():
     myDict["percentReturn"] = percentReturn
     myDict["max"] = max_index
     myDict["test"] = {False, False, False, False, True, False, False}
-
     #test
 
     positive = []
@@ -62,14 +62,18 @@ def printrand():
 
 # No caching at all for API endpoints.
 @app.after_request
-def add_header(response):
-    # response.cache_control.no_store = True
-    response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0'
-    response.headers['Pragma'] = 'no-cache'
-    response.headers['Expires'] = '-1'
-    return response
+def add_header(r):
+    """
+    Add headers to both force latest IE rendering engine or Chrome Frame,
+    and also to cache the rendered page for 10 minutes.
+    """
+    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    r.headers["Pragma"] = "no-cache"
+    r.headers["Expires"] = "0"
+    r.headers['Cache-Control'] = 'public, max-age=0'
+    return r
 	
 
 if __name__ == '__main__':
-	app.run(host='127.0.0.1', port=8080, debug=True)
-    #app.run(host='127.0.0.1', debug= True)
+	#app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(host='0.0.0.0', debug= True)
