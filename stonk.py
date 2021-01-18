@@ -25,7 +25,7 @@ def printrand():
         percentReturn.append(round((((currentPrice[i]-startPrice[i])/startPrice[i])*100),2))
 
     max_index = percentReturn.index(max(percentReturn))
-    print(max_index)
+    #print(max_index)
 
     #save values into dictionary for easy access in html
     myDict = {}
