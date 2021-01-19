@@ -6,6 +6,28 @@
 <html>
     <head>
         <style>
+            .center {
+                    display: block;
+                    text-align: center;
+                    border: 3px solid rgb(0, 0, 0);
+                    margin: auto;
+                    }
+
+            .center2 {
+                    text-align: center;
+                    margin: auto;
+                    }
+
+            .tcenter {
+                        margin-left: auto;
+                        margin-right: auto;
+                        margin: auto;
+                    }
+            img {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             body {
                 /*
                 background-image: url('/static/stonkman.jpg');
@@ -28,14 +50,15 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1 style= padding-left:180px>Stonk Challenge Test</h1>
+        <div class="center">
+            <h1>Stonks Chat Year Challenge</h1>
+        </div>
         <script src="" async defer></script>
         <style>
             table, th, td {
               border: 1px solid rgb(0, 0, 0);
               border-spacing: 0px;
               width:auto;
-              margin-left: 60px;
             }
             tr:nth-child(odd) {background-color: #c5c6ce;}
             tr:nth-child(even) {background-color: #ffffff;}
@@ -48,8 +71,9 @@
             </style>
             </head>
             <body>
+                <h1></h1>
             
-            <table>
+            <table class="tcenter">
               <tr>
                 <th>Name</th>
                 <th>Ticker</th>
@@ -68,29 +92,41 @@
                 </tr>
               {%endfor%}
             </table>
-            <img src="/static/stonk_graph.png">
-            <h1 style= padding-left:120px>Your current Stonks KING:</h1>
+
+            <img src="/static/stonk_graph.png" style="width:400px">
+            <div class="center2">
+                <h1>Your current Stonks KING:</h1>
+            </div>
             {%if (content.max == 0) %}
-                <img src="/static/david.JPG" style="width:600px" padding-right= 200px>
+                <img src="/static/david.JPG" style="width:400px">
             {%endif%}
             {%if (content.max == 1) %}
-                <img src="/static/poles2.GIF" style="width:600px" padding-right= 200px>
+                <img src="/static/jack.PNG" style="width:400px">
             {%endif%}
             {%if (content.max == 2) %}
-                <img src="/static/presley.JPG" style="width:600px" padding-right= 200px>
+                <img src="/static/josh.JPG" style="width:400px">
             {%endif%}
             {%if (content.max ==3) %}
-                <img src="/static/mark.JPG" style="width:600px" padding-right= 200px>
+                <img src="/static/mark.JPG" style="width:400px">
             {%endif%}
             {%if (content.max == 4) %}
-                <img src="/static/jack.PNG" style="width:600px" padding-right= 200px>
+                <img src="/static/poles2.GIF" style="width:400px">
             {%endif%}
             {%if (content.max == 5) %}
-                <img src="/static/rex.png" style="width:600px" padding-right= 200px>
+                <img src="/static/presley.JPG" style="width:400px">
             {%endif%}
             {%if (content.max == 6) %}
-                <img src="/static/josh.JPG" style="width:600px" padding-right= 200px>
+                <img src="/static/rex.png" style="width:400px">
             {%endif%}
+            <h1></h1>
+            <h1></h1>
+
+            <footer>
+                <p class= 'center2'>Created by: Presley Duggan and David Delaney<br>
+                <a href="mailto:mail@pres.dev">mail@pres.dev</a></p>
+              </footer>
+            <h1></h1>
+
 
     </body>
 </html>
