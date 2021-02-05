@@ -3,3 +3,5 @@ this was made for stonks group chat challenge
 Which stock will have the higher EOY return from the start date of ____?
 
 Runs from main.py!
+
+You can view the page at http://stonks.pres.dev
