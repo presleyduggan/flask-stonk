@@ -1,6 +1,4 @@
-this was made for stonks group chat challenge
-
-Which stock will have the higher EOY return from the start date of ____?
+We each picked a stock. Whoever has the stock has the highest return at the end of the year is the winner. The web page dynamically tracks who is in the lead, displays everyone's current return (and graphs the results), and displays a photo of who is currently in the lead.
 
 Runs from main.py!
 
